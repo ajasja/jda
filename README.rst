@@ -18,7 +18,7 @@ Jupyter Desktop Application
      :alt: Updates
 
 
-Jupyter desktop application (runs a server and a chrominium instance. The server is shot down when the window closes.
+Jupyter desktop application (runs a jupyter notebook server and a chromium instance). The server is shut down when the window closes.
 
 
 * Free software: Apache Software License 2.0
