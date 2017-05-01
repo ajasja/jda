@@ -21,7 +21,7 @@ test_requirements = [
 setup(
     name='jda',
     version='0.1.0',
-    description="Jupyter desktop application (runs a server and a chrominium instance. The server is shot down when the window closes.",
+    description="Jupyter desktop application (runs a jupyter notebook server and a chromium instance). The server is shut down when the window closes.",
     long_description=readme + '\n\n' + history,
     author="Ajasja Ljubetic",
     author_email='ajasja.ljubetic@gmail.com',
