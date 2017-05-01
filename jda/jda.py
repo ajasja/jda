@@ -9,6 +9,18 @@ import subprocess
 
 JUPYTER_COMMAND = "jupyter notebook  --port={port} --no-browser"
 
+def is_port_free(port, host="localhost"):
+    """Checks if port is open on host"""
+    #based on http://stackoverflow.com/a/35370008/952600
+    import socket
+    from contextlib import closing
+
+    with closing(socket.socket(socket.AF_INET, socket.SOCK_STREAM)) as sock:
+        if sock.connect_ex((host, port)) == 0:
+            return False
+        else:
+            return True
+
 def run_jupyter(notebook_name, port=None, command=JUPYTER_COMMAND):
     """Runs a jupyter notebook server on a specified port"""
     cmd = command.format(port=port)
