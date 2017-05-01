@@ -71,4 +71,4 @@ def check_versions():
 
 
 if __name__ == '__main__':
-    main('example.ipynb', '14568')
+    main('tests/example.ipynb', '14568')
