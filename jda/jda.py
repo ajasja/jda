@@ -21,6 +21,17 @@ def is_port_free(port, host="localhost"):
         else:
             return True
 
+def get_free_tcp_port():
+    """Gets a free port in the range of 1024 to 65xxx
+    Using this has a possible race conditions, since the free port can be used by another applications, 
+    before it's used as intended. 
+    """
+    tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    tcp.bind(('', 0))
+    addr, port = tcp.getsockname()
+    tcp.close()
+    return port            
+
 def run_jupyter(notebook_name, port=None, command=JUPYTER_COMMAND):
     """Runs a jupyter notebook server on a specified port"""
     cmd = command.format(port=port)
